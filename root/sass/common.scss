@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+@import "_extension_import.scss";
+
+body {
+	-webkit-text-size-adjust: none;
+}
+
+#header,
+main,
+#footer {
+	text-align: left;
+	margin: 0 auto;
+	max-width: es($base-width);
+}
+
+/*----------------------------------------
+	header
+----------------------------------------*/
+#header {
+	h1 {
+		padding: 3em;
+		background: #333;
+		color: #fff
+	}
+}
+
+/*----------------------------------------
+	content
+----------------------------------------*/
+main {
+	h2 {
+		padding: 0.5em 1em;
+		border-bottom: 3px solid #333;
+	}
+
+	h3 {
+		padding: 0.5em 1em;
+		margin: 0.3em 0;
+		background-color: #000;
+		color: #fff;
+	}
+
+	section {
+		margin-bottom: 2em;
+	}
+}
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+#footer {
+}
+
+
+/*----------------------------------------
+	Class
+----------------------------------------*/
+@include clearfix();
+
+.test {
+	@extend %clearfix;
+}

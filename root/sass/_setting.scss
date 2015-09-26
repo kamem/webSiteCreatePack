@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+$images_dir: "public/img/";
+
+//HTML5の場合は「true」
+$html5: true;
+//Retina対応
+$isRetina: false;
+//base64対応
+$isBase64: false;
+
+//compass ブラウザサポート
+$supported-browsers: ("chrome", "firefox", "ie", "safari", "opera", "ios-safari", "android");
+$browser-minimum-versions: ("opera": "11");
+
+// @debug browsers();
+// @debug browser-versions(ios-safari);

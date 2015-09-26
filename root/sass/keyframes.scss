@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+@import "_extension_import";
+
+/*----------------------------------------
+	comments Blink
+----------------------------------------*/
+@keyframes blink {
+	0% {
+		background: #f4fdff;
+	}
+	25% {
+		background: transparent;
+	}
+	50% {
+		background: #f4fdff;
+	}
+	75% {
+		background: transparent;
+	}
+	100% {
+		background: #f4fdff;
+	}
+}
+
+@keyframes blink2 {
+	0% {
+		background: #f4fdff;
+	}
+	25% {
+		background: rgba(#fff,0.5);
+	}
+	50% {
+		background: #f4fdff;
+	}
+	75% {
+		background: rgba(#fff,0.5);
+	}
+	100% {
+		background: #f4fdff;
+	}
+}

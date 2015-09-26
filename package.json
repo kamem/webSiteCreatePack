@@ -1,0 +1,21 @@
+{
+	"name": "websiteCreatePack",
+	"version": "0.0.0",
+	"private": true,
+
+	"devDependencies": {
+		"gulp": "",
+		"gulp-plumber": "",
+		"gulp-watch": "",
+
+		"gulp-compass": "",
+		"gulp-autoprefixer": "",
+		"gulp.spritesmith": "",
+
+		"gulp-webpack": "",
+		"vinyl-named": "",
+
+		"gulp-uglify": "",
+		"gulp-minify-css": ""
+	}
+}

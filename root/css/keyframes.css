@@ -1,0 +1,139 @@
+/*----------------------------------------
+	comments Blink
+----------------------------------------*/
+@-webkit-keyframes blink {
+  0% {
+    background: #f4fdff;
+  }
+  25% {
+    background: transparent;
+  }
+  50% {
+    background: #f4fdff;
+  }
+  75% {
+    background: transparent;
+  }
+  100% {
+    background: #f4fdff;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    background: #f4fdff;
+  }
+  25% {
+    background: transparent;
+  }
+  50% {
+    background: #f4fdff;
+  }
+  75% {
+    background: transparent;
+  }
+  100% {
+    background: #f4fdff;
+  }
+}
+@-o-keyframes blink {
+  0% {
+    background: #f4fdff;
+  }
+  25% {
+    background: transparent;
+  }
+  50% {
+    background: #f4fdff;
+  }
+  75% {
+    background: transparent;
+  }
+  100% {
+    background: #f4fdff;
+  }
+}
+@keyframes blink {
+  0% {
+    background: #f4fdff;
+  }
+  25% {
+    background: transparent;
+  }
+  50% {
+    background: #f4fdff;
+  }
+  75% {
+    background: transparent;
+  }
+  100% {
+    background: #f4fdff;
+  }
+}
+@-webkit-keyframes blink2 {
+  0% {
+    background: #f4fdff;
+  }
+  25% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    background: #f4fdff;
+  }
+  75% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    background: #f4fdff;
+  }
+}
+@-moz-keyframes blink2 {
+  0% {
+    background: #f4fdff;
+  }
+  25% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    background: #f4fdff;
+  }
+  75% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    background: #f4fdff;
+  }
+}
+@-o-keyframes blink2 {
+  0% {
+    background: #f4fdff;
+  }
+  25% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    background: #f4fdff;
+  }
+  75% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    background: #f4fdff;
+  }
+}
+@keyframes blink2 {
+  0% {
+    background: #f4fdff;
+  }
+  25% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    background: #f4fdff;
+  }
+  75% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    background: #f4fdff;
+  }
+}
