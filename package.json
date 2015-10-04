@@ -16,6 +16,15 @@
 		"vinyl-named": "",
 
 		"gulp-uglify": "",
-		"gulp-minify-css": ""
+		"gulp-minify-css": "",
+
+		"gulp-webpack": "",
+		"vinyl-named": "",
+		"babel-loader": ""
+	},
+	"dependencies": {
+		"jquery": "",
+		"react": "",
+		"react-router": ""
 	}
 }
