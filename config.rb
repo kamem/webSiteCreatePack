@@ -7,5 +7,6 @@ images_dir = "root/img/"
 javascripts_dir = "js/"
 relative_assets = true
 line_comments = false
+output_style = :expanded
 
 Encoding.default_external = 'utf-8'

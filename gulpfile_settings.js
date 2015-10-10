@@ -1,21 +1,30 @@
+var dest = 'root';
+var watch = 'src';
+
 var settings = {
 	dest: {
-		css: {dir: 'root/css/'},
-		img: {dir: 'root/img/'},
-		js: {dir: 'root/js/'}
+		name: dest,
+		html: {dir: dest + '/'},
+		css: {dir: dest + '/css/'},
+		img: {dir: dest + '/img/'},
+		js: {dir: dest + '/js/'}
 	},
-	ui: {
-		css: {dir: 'ui/css/'},
-		img: {dir: 'ui/img/'},
-		js: {dir: 'ui/js/'}
+	watch: {
+		name: watch,
+		html: {dir: watch + '/'},
+		css: {dir: watch + '/css/'},
+		img: {dir: watch + '/img/'},
+		js: {dir: watch + '/js/'},
+		es6: {dir: watch + '/js/'}
 	}
-}
-
+};
 settings.dest.css.files = settings.dest.css.dir + '**/*.css';
 settings.dest.js.files = settings.dest.js.dir + '**/*.js';
 
-settings.ui.css.files = settings.ui.css.dir + '**/*.css';
-settings.ui.js.files =  settings.ui.js.dir + 'main.js';
-settings.ui.img.files =  settings.ui.img.dir + '**/*.png';
+settings.watch.html.files = settings.watch.html.dir + '**/*.html';
+settings.watch.css.files = settings.watch.css.dir + '**/*.scss';
+settings.watch.js.files =  settings.watch.js.dir + '**/*.js';
+settings.watch.es6.files =  settings.watch.es6.dir + '**/*.jsx';
+settings.watch.img.files =  settings.watch.img.dir + '**/*.png';
 
 module.exports = settings;

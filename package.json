@@ -12,6 +12,12 @@
 		"gulp-autoprefixer": "",
 		"gulp.spritesmith": "",
 
+		"gulp-postcss": "",
+		"postcss-mixins": "",
+		"postcss-nested": "",
+		"postcss-simple-vars": "",
+		"precss": "",
+
 		"gulp-webpack": "",
 		"vinyl-named": "",
 
@@ -20,7 +26,14 @@
 
 		"gulp-webpack": "",
 		"vinyl-named": "",
-		"babel-loader": ""
+		"babel-loader": "",
+
+		"gulp-usemin": "",
+
+		"gulp-connect": "",
+
+		"minimist": "",
+		"gulp-if": ""
 	},
 	"dependencies": {
 		"jquery": "",

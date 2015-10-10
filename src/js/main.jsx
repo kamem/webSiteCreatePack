@@ -1,3 +1,4 @@
+var App = require('./App');
 var Home = require('./Home');
 var About = require('./About');
 var React = require('react');

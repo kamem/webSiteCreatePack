@@ -2,9 +2,7 @@
   "name": "websiteCreatePack",
   "version": "0.0.0",
   "homepage": "",
-  "authors": [
-    "kamem "
-  ],
+  "authors": [],
   "description": "",
   "main": "",
   "keywords": [
@@ -12,6 +10,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "google-code-prettify": ""
+    "google-code-prettify": "",
   }
 }

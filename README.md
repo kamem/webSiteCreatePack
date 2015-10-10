@@ -1,15 +1,62 @@
 # webSiteCreatePack
 
+## 初期設定
+
 ## 必須
 1. Node
 2. Gulp
 
 		npm install -g gulp
+3. bower
+4. Ruby
+5. Bundler
 
-3. Ruby
-4. Bundler
+### フォルダ構成
+
+	├ root (公開用)
+	└ src (作業用)
+		├ css
+		├ js
+		└ img
+
+src（作業用）フォルダで作業した内容をgulpでwatchしてroot（公開用）
+
+#### フォルダ構成の名前を変えたい場合
+gulpfile_settings.jsの内容を書き換えてください。
 
 ## 準備
+
+### jsの準備
+jQueryなど必要なjsがあればpackage.jsonに記述するか。
+もしくはbower.jsonに記述してください。
+
+個人的にはnpmで管理できる範囲であればpackage.jsonに書き、
+npmにないものであればbower側に記述するように使い方を分けています。
+フロント側で必要なファイルはbowerで一括管理も良いかなと思っています。
+
+package.json
+
+	"dependencies": {
+		"jquery": "",
+		"react": "",
+		"react-router": ""
+	}
+
+bower.json
+
+	"dependencies": {
+		"google-code-prettify": "",
+	}
+	
+### scssの準備
+自分で使っているscssファイルを`src/css`内に入れてください。
+自分の場合bowerでinstallしてcpで移動しています。
+
+	bower install https://github.com/kamem/compass.default.git
+	cp bower_components/compass.default/sass/* src/css
+
+### ファイルを生成
+
 1. package.jsonのnode_modulesをinstall
 
 		sudo npm install
@@ -18,15 +65,50 @@
 
 		bundle install
 
+3. bower.jsonを使ってjsをダウンロードしたい場合
+
+		bower install
+
 ## 作業
-	gulp watch
+### 開始
+	gulp
 
 ### スプライトファイルの制作
-	// "img/sprite/**/*.png"内のファイルをスプライト化
+	// "src/img/sprite/**/*.png"内のファイルをスプライト化
 	gulp sprites
+	
+`src/img/sprite/`内に`sprite-**.png`というファイルがフォルダの数分生成されます。
+`src/css`内に`src/img/sprite/`以下のフォルダの数分のscssの設定ファイルが生成されます。
 
-## 公開前
+ex) `num`フォルダの場合
+
+	sprite-num.png
+	_num.scss
+
+### 実作業
+
+#### html
+
+[usemin](https://www.npmjs.com/package/gulp-usemin)を使っています。
+
+	<!-- build:js js/common.js -->
+	<script src="../node_modules/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/google-code-prettify/src/prettify.js"></script>
+	<!-- endbuild -->
+	
+`root/js/common.js`として`jquery.js` `prettify.js`をまとめたファイルが生成されます。
+htmlは`root/`に下記ように変換され出力されます。
+
+	<script src="js/common.js"></script>
+	
+
+#### js
+`jsx`と拡張子をつけることによって、webpackとbabelを使えるようにしています。
+webpackとbabelを使わない場合は拡張子を`js`にしてください。
+
+
+## 公開
 * CSS,JSの圧縮
 
-		gulp min
+		gulp --minify true
 
