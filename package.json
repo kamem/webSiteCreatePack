@@ -13,9 +13,6 @@
 		"gulp.spritesmith": "",
 
 		"gulp-postcss": "",
-		"postcss-mixins": "",
-		"postcss-nested": "",
-		"postcss-simple-vars": "",
 		"precss": "",
 
 		"gulp-webpack": "",
