@@ -1,7 +1,5 @@
 # webSiteCreatePack
 
-## 初期設定
-
 ## 必須
 1. Node
 2. Gulp
