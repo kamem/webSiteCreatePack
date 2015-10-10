@@ -159,4 +159,4 @@ gulp.task('livereload', function() {
 });
 
 gulp.task('default', ['watch', 'webserver', 'livereload']);
-gulp.task('build', ['compass', 'webpack', 'jsCopy', 'imgCopy', 'usemin']);
+gulp.task('build', ['compass', 'webpack', 'postcss', 'jsCopy', 'imgCopy', 'usemin']);

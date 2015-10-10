@@ -110,5 +110,5 @@ webpackとbabelを使わない場合は拡張子を`js`にしてください。
 ## 公開
 * CSS,JSの圧縮
 
-		gulp --minify true
+		gulp build --minify true
 
