@@ -20,7 +20,7 @@
 src（作業用）フォルダで作業した内容をgulpでwatchしてroot（公開用）
 
 #### フォルダ構成の名前を変えたい場合
-gulpfile_settings.jsの内容を書き換えてください。
+`gulpfile_settings.js`の内容を書き換えてください。
 
 ## 準備
 
@@ -56,6 +56,11 @@ bower.json
 
 	bower install https://github.com/kamem/compass.default.git
 	cp bower_components/compass.default/sass/* src/css
+
+postcssを使いたい場合は`gulpfile_settings.js`を修正してscssではなくcssをwatchするようにします。
+
+	settings.watch.css.files = settings.watch.css.dir + '**/*.css';
+
 
 ### ファイルを生成
 
