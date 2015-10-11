@@ -116,6 +116,7 @@ gulp.task('webpack', function(){
 
 gulp.task('jsCopy', function(){
 	gulp.src(settings.watch.js.files)
+	.pipe(gulpif(args.minify === 'true', minifyJs()))
 	.pipe(gulp.dest(settings.dest.js.dir));
 });
 
