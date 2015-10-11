@@ -1,7 +1,7 @@
 # webSiteCreatePack
 
 ## 必須
-1. Node
+1. Node (最新版推奨)
 2. Gulp
 
 		npm install -g gulp
