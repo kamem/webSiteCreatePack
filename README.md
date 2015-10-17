@@ -92,7 +92,7 @@ ex) `num`フォルダの場合
 	sprite-num.png
 	_num.scss
 
-#### svgからfontの制作
+### svgからfontの制作
 	// "src/font/**/*.svg"内のファイルをfont化
 	gulp svgfonts
 
@@ -100,7 +100,7 @@ ex) `num`フォルダの場合
 `src/css`内に`src/font/`以下のフォルダの数分のscssの設定ファイルが生成されます。
 fontの内容を確認したい場合は`src/css/font/sns_fontlist.html`を見るとfont一覧を確認できます。
 
-### fontの使い方
+#### fontの使い方
 
 	@import "font/_name";
 
