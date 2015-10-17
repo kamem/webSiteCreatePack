@@ -91,6 +91,7 @@ gulp.task('sprites', function () {
 
 		spriteData.img.pipe(gulp.dest(settings.watch.img.dir + 'sprite'));
 		spriteData.css.pipe(gulp.dest(settings.watch.css.dir + 'sprite/'));
+		spriteData.img.pipe(gulp.dest(settings.dest.img.dir + 'sprite'));
 	});
 });
 
@@ -120,7 +121,8 @@ gulp.task('svgfonts', function(){
 			.pipe(rename({basename: folder + '_fontlist'}))
 			.pipe(gulp.dest(settings.watch.css.dir + '/font/'));
 		})
-		.pipe(gulp.dest(settings.watch.font.dir));
+		.pipe(gulp.dest(settings.watch.font.dir))
+		.pipe(gulp.dest(settings.dest.font.dir));
 	});
 });
 
