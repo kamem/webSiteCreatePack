@@ -29,6 +29,10 @@
 
 		"gulp-connect": "",
 
+		"gulp-iconfont": "",
+		"gulp-rename": "",
+		"gulp-consolidate": "",
+
 		"minimist": "",
 		"gulp-if": ""
 	},

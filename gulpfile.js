@@ -20,6 +20,10 @@ var connect = require('gulp-connect');
 var minimist = require('minimist');
 var gulpif = require('gulp-if');
 
+var rename = require("gulp-rename");
+var iconfont = require('gulp-iconfont');
+var consolidate = require('gulp-consolidate');
+
 var fs = require('fs');
 var path = require('path');
 
@@ -90,6 +94,37 @@ gulp.task('sprites', function () {
 	});
 });
 
+
+gulp.task('svgfonts', function(){
+	var folders = getFolders(settings.watch.font.dir);
+	var timestamp = Date.now();
+
+	folders.map(function (folder) {
+		gulp.src(settings.watch.font.dir + folder + '/*.svg')
+		.pipe(iconfont({
+			fontName: folder
+		}))
+		.on('glyphs', function(glyphs) {
+			var options = {
+				glyphs: glyphs,
+				fontName: folder,
+				fontPath: '../font/',
+				className: folder
+			};
+			gulp.src(settings.watch.font.dir + 'templates/css.scss')
+			.pipe(consolidate('lodash', options))
+			.pipe(rename({basename: '_' + folder}))
+			.pipe(gulp.dest(settings.watch.css.dir + '/font/'));
+			gulp.src(settings.watch.font.dir + 'templates/fontlist.html')
+			.pipe(consolidate('lodash', options))
+			.pipe(rename({basename: folder + '_fontlist'}))
+			.pipe(gulp.dest(settings.watch.css.dir + '/font/'));
+		})
+		.pipe(gulp.dest(settings.watch.font.dir));
+	});
+});
+
+
 gulp.task('webpack', function(){
 	gulp.src(settings.watch.es6.files)
 	.pipe(plumber())
@@ -125,6 +160,11 @@ gulp.task('imgCopy', function(){
 	.pipe(gulp.dest(settings.dest.img.dir));
 });
 
+gulp.task('fontCopy', function(){
+	gulp.src(settings.watch.font.files)
+	.pipe(gulp.dest(settings.dest.font.dir));
+});
+
 gulp.task('usemin', function() {
 	gulp.src(settings.watch.html.files)
 	.pipe(usemin({
@@ -136,13 +176,14 @@ gulp.task('usemin', function() {
 
 
 
-gulp.task('watch', ['compass', 'webpack', 'postcss',  'jsCopy', 'imgCopy', 'usemin'], function(){
+gulp.task('watch', ['compass', 'webpack', 'postcss',  'jsCopy', 'imgCopy', 'fontCopy', 'usemin'], function(){
 	if(isSscs) gulp.watch(settings.watch.css.files, ['compass']);
 	if(!isSscs) gulp.watch(settings.watch.css.files, ['postcss'])
 	gulp.watch(settings.watch.es6.files, ['webpack']);
 	gulp.watch(settings.watch.html.files, ['usemin']);
 	gulp.watch(settings.watch.js.files, ['jsCopy']);
 	gulp.watch(settings.watch.img.files, ['imgCopy']);
+	gulp.watch(settings.watch.font.files, ['fontCopy']);
 });
 
 gulp.task('webserver', function() {
@@ -160,4 +201,4 @@ gulp.task('livereload', function() {
 });
 
 gulp.task('default', ['watch', 'webserver', 'livereload']);
-gulp.task('build', ['compass', 'webpack', 'postcss', 'jsCopy', 'imgCopy', 'usemin']);
+gulp.task('build', ['compass', 'webpack', 'postcss', 'jsCopy', 'imgCopy', 'fontCopy', 'usemin']);
