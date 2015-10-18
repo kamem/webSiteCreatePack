@@ -45,10 +45,15 @@ bower.json
 	"dependencies": {
 		"google-code-prettify": "",
 	}
-	
+
 それぞれプロジェクトを始める際にバージョン指定をしてください。
 空の状態だと最新がダウンロードされますが、
 時間がたち最新バージョンが変わった場合には正常に動作しなくなってしまう可能性があるためです。
+
+#### バージョンをひとつひとつ設定するのがめんどくさい場合。
+下記を使ってnode_modulesをインストールするとpackage.jsonに現在の最新のバージョンが自動で指定できます。
+
+* [package.jsonのdependenciesを自動更新するスクリプトを書く](http://qiita.com/okunishinishi@github/items/7629b58d1c3d464738dc)
 
 ### scssの準備
 自分で使っているscssファイルを`src/css`内に入れてください。
