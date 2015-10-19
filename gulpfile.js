@@ -145,7 +145,12 @@ gulp.task('webpack', function(){
 					loader: 'babel-loader'
 				}
 			]
-		}
+		},
+		plugins: [
+			new webpack.webpack.ResolverPlugin([
+				new webpack.webpack.ResolverPlugin.DirectoryDescriptionFilePlugin( "bower.json", ["main", ["main", "1"]] )
+			])
+		]
 	}))
 	.pipe(gulpif(args.minify === 'true', minifyJs()))
 	.pipe(gulp.dest(settings.dest.js.dir));
