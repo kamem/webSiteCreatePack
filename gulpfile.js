@@ -82,7 +82,7 @@ gulp.task('sprites', function () {
 		var spriteData = gulp.src('sprite/' + folder + '/*.png', {cwd: settings.watch.img.dir})
 			.pipe(spritesmith({
 				imgName: 'sprite-' + folder + '.png',
-				imgPath: '../' + settings.watch.img.dir + 'sprite/sprite-' + folder + '.png?' + timestamp,
+				imgPath: '../img/' + 'sprite/sprite-' + folder + '.png?' + timestamp,
 				cssName: '_'+ folder + '.scss',
 				algorithm: 'binary-tree',
 				padding: 4,
