@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+@import "sprite/num";
+@import "font/sns";
+
+:root {
+	--brand-color: #88E18E;
+}
+
+.logo {
+	color: var(--brand-color);
+	background-image: resolve('sprite/num/img2.png');
+	width: width('sprite/num/img2.png');
+}

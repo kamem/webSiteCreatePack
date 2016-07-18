@@ -1,8 +1,10 @@
 var React = require('react');
+
+
 var Home = React.createClass({
   render: function() {
     return (
-      <div>Home</div>
+      <div>Home<span className="aaa">Test</span></div>
     );
   }
 });

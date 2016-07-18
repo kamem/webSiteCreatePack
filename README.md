@@ -5,9 +5,6 @@
 2. Gulp
 
 		npm install -g gulp
-3. bower
-4. Ruby
-5. Bundler
 
 ### フォルダ構成
 
@@ -15,35 +12,23 @@
 	└ src (作業用)
 		├ css
 		├ js
+		├ font
 		└ img
 
-src（作業用）フォルダで作業した内容をgulpでwatchしてroot（公開用）
+src（作業用）フォルダで作業した内容をroot（公開用）にはきだす。
 
-#### フォルダ構成の名前を変えたい場合
-`gulpfile_settings.js`の内容を書き換えてください。
+#### フォルダ構成の名前を変更したい場合
+`config.js`の内容を書き換えてください。
 
 ## 準備
 
 ### jsの準備
-jQueryなど必要なjsがあればpackage.jsonに記述するか。
-もしくはbower.jsonに記述してください。
-
-個人的にはnpmで管理できる範囲であればpackage.jsonに書き、
-npmにないものであればbower側に記述するように使い方を分けています。
-フロント側で必要なファイルはbowerで一括管理も良いかなと思っています。
+jQueryなど必要なjsがあればpackage.jsonに指定してください。
 
 package.json
 
 	"dependencies": {
-		"jquery": "",
-		"react": "",
-		"react-router": ""
-	}
-
-bower.json
-
-	"dependencies": {
-		"google-code-prettify": "",
+		"jquery": ""
 	}
 
 それぞれプロジェクトを始める際にバージョン指定をしてください。
@@ -55,54 +40,36 @@ bower.json
 
 * [package.jsonのdependenciesを自動更新するスクリプトを書く](http://qiita.com/okunishinishi@github/items/7629b58d1c3d464738dc)
 
-### scssの準備
-自分で使っているscssファイルを`src/css`内に入れてください。
-自分の場合bowerでinstallしてcpで移動しています。
-
-	bower install https://github.com/kamem/compass.default.git
-	cp bower_components/compass.default/sass/* src/css
-
-postcssを使いたい場合は`gulpfile_settings.js`を修正してscssではなくcssをwatchするようにします。
-
-	settings.watch.css.files = settings.watch.css.dir + '**/*.css';
-
-
 ### ファイルを生成
 
 1. package.jsonのnode_modulesをinstall
 
 		sudo npm install
 
-2. Gemfileに従い、sass,compassをinstall
-
-		bundle install
-
-3. bower.jsonを使ってjsをダウンロードしたい場合
-
-		bower install
-
 ## 作業
 ### 開始
-	gulp
+	npm run watch
 
-### スプライトファイルの制作
-	// "src/img/sprite/**/*.png"内のファイルをスプライト化
-	gulp sprites
-	
+### スプライト画像の制作
+#### "src/img/sprite/**/*.png"内のファイルをスプライト化
+
+	npm run sprites
+
 `src/img/sprite/`内に`sprite-**.png`というファイルがフォルダの数分生成されます。
-`src/css`内に`src/img/sprite/`以下のフォルダの数分のscssの設定ファイルが生成されます。
+`src/css`内に`src/img/sprite/`以下のフォルダの数分のcssの設定ファイルが生成されます。
 
-ex) `num`フォルダの場合
+#### ex) `num`フォルダの場合
 
 	sprite-num.png
-	_num.scss
+	_num.css
 
 ### svgからfontの制作
-	// "src/font/**/*.svg"内のファイルをfont化
-	gulp svgfonts
+#### "src/font/**/*.svg"内のファイルをfont化
+
+	npm run svgfonts
 
 `src/font/`内にfontがフォルダの数分生成されます。
-`src/css`内に`src/font/`以下のフォルダの数分のscssの設定ファイルが生成されます。
+`src/css`内に`src/font/`以下のフォルダの数分のcssの設定ファイルが生成されます。
 fontの内容を確認したい場合は`src/css/font/sns_fontlist.html`を見るとfont一覧を確認できます。
 
 #### fontの使い方
@@ -110,11 +77,9 @@ fontの内容を確認したい場合は`src/css/font/sns_fontlist.html`を見�
 	@import "font/_name";
 
 	.test {
-		font-family: $name-test; //変数で文字コードを取ってくることができます。
-		//(フォルダ名 - ファイル名)
+		content: var(name-test); //変数で文字コードを取ってくることができます。
+		//var(フォルダ名-ファイル名)
 	}
-
-吐き出すscssの内容を変えたい場合はsrc/css/font/templates/css.scssを編集してください。
 
 ### 実作業
 
@@ -131,11 +96,15 @@ fontの内容を確認したい場合は`src/css/font/sns_fontlist.html`を見�
 htmlは`root/`に下記ように変換され出力されます。
 
 	<script src="js/common.js"></script>
-	
+
+#### css
+cssはpostcssを使えるようにしています。
+
+* precss
+* postcss-assets
 
 #### js
-`jsx`と拡張子をつけることによって、webpackとbabelを使えるようにしています。
-webpackとbabelを使わない場合は拡張子を`js`にしてください。
+webpackとbabelを使えるようにしています。
 
 
 ### 確認方法
@@ -144,4 +113,4 @@ localhost:8888 で確認できます。
 ## 公開
 * CSS,JSの圧縮
 
-		gulp build --minify true
+		npm run build

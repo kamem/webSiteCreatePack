@@ -1,0 +1,61 @@
+@define-placeholder img1 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: 0px 0px;
+	width: 50px;
+	height: 50px;
+}
+@define-placeholder img2 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: -54px 0px;
+	width: 50px;
+	height: 50px;
+}
+@define-placeholder img3 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: 0px -54px;
+	width: 50px;
+	height: 50px;
+}
+@define-placeholder img4 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: -54px -54px;
+	width: 50px;
+	height: 50px;
+}
+@define-placeholder img5 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: -108px 0px;
+	width: 50px;
+	height: 50px;
+}
+
+.img1 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: 0px 0px;
+	width: 50px;
+	height: 50px;
+}
+.img2 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: -54px 0px;
+	width: 50px;
+	height: 50px;
+}
+.img3 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: 0px -54px;
+	width: 50px;
+	height: 50px;
+}
+.img4 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: -54px -54px;
+	width: 50px;
+	height: 50px;
+}
+.img5 {
+  background-image: url("/img/sprite/sprite-num.png?1468810949111");
+	background-position: -108px 0px;
+	width: 50px;
+	height: 50px;
+}

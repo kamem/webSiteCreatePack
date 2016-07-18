@@ -9,7 +9,14 @@
 	font-style: normal;
 }
 
-<% _.each(glyphs, function(glyph) { %>$<%= className %>-<%= glyph.name %>: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>";
-<% }); %>
-<% _.each(glyphs, function(glyph) { %>%<%= className %>-<%= glyph.name %> { content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>" }
+:root {
+	<% _.each(glyphs, function(glyph) { %>--<%= className %>-<%= glyph.name %>: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>";
+	<% }); %>
+}
+
+.font-<%= fontName %> {
+	font-family: "<%= fontName %>";
+}
+
+<% _.each(glyphs, function(glyph) { %>.<%= className %>-<%= glyph.name %>:after { content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>" }
 <% }); %>

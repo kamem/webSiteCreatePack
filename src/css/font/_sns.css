@@ -1,0 +1,37 @@
+@font-face {
+	font-family: "sns";
+	src: url('/font/sns.eot');
+	src: url('/font/sns.eot?#iefix') format('eot'),
+	url('/font/sns.woff') format('woff'),
+	url('/font/sns.ttf') format('truetype'),
+	url('/font/sns.svg#sns') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--sns-space: "\20";
+	--sns-github: "\E001";
+	--sns-arrow-down: "\E002";
+	--sns-arrow-left: "\E003";
+	--sns-arrow-right: "\E004";
+	--sns-arrow-up: "\E005";
+	--sns-google: "\E006";
+	--sns-remove: "\E007";
+	--sns-twitter: "\E008";
+	
+}
+
+.font-sns {
+	font-family: "sns";
+}
+
+.sns-space:after { content: "\20" }
+.sns-github:after { content: "\E001" }
+.sns-arrow-down:after { content: "\E002" }
+.sns-arrow-left:after { content: "\E003" }
+.sns-arrow-right:after { content: "\E004" }
+.sns-arrow-up:after { content: "\E005" }
+.sns-google:after { content: "\E006" }
+.sns-remove:after { content: "\E007" }
+.sns-twitter:after { content: "\E008" }
