@@ -28,6 +28,6 @@ gulp.task('postcss', () => {
 				browsers: ["> 0%"],
 				cascade: false
 			}))
-			.pipe(gulpif(args.minify === 'true', cleanCSS()))
+			.pipe(gulpif(args.minify === 'true', cleanCSS({advanced: false})))
 			.pipe(gulp.dest(config.css.dest));
 });
